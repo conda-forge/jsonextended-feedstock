@@ -1,5 +1,5 @@
 {% set name = "jsonextended" %}
-{% set version = "0.7.10" %}
+{% set version = "0.7.11" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 76a6e5117306f4ff8604bf91804918da67e2dcaa51def5eb36621b4443db80fe
+  sha256: 8044ddc359c8ff91b5b3183be33822131bfddf85ddcc2fd91640029b2c51464a
 
 build:
   number: 0
