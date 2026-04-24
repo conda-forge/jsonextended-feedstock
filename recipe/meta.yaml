@@ -6,11 +6,11 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8044ddc359c8ff91b5b3183be33822131bfddf85ddcc2fd91640029b2c51464a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -18,14 +18,16 @@ requirements:
   host:
     - pathlib2
     - pip
-    - python
+    - python {{ python_min }}
   run:
     - ijson
     - pathlib2
     - pint
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - jsonextended
     - jsonextended.encoders
